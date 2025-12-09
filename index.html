@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maggie's Farm Prototype</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="phone-frame">
+        
+        <div id="screen-product" class="screen active">
+            <div class="header">
+                <p class="sub-label">The product you bought</p>
+                <h1>Carrot</h1>
+                <p class="farm-label">From Maggie's Farm</p>
+                <div class="carrot-icon">🥕</div> </div>
+
+            <div class="stats-container">
+                <h3>Farm Score: 88/100</h3>
+                
+                <div class="stat-item">
+                    <label>Pesticides</label>
+                    <div class="bar-bg"><div class="bar-fill green" style="width: 80%"></div></div>
+                </div>
+                <div class="stat-item">
+                    <label>Fair Labor</label>
+                    <div class="bar-bg"><div class="bar-fill orange" style="width: 60%"></div></div>
+                </div>
+                <div class="stat-item">
+                    <label>Carbon Footprint</label>
+                    <div class="bar-bg"><div class="bar-fill grey" style="width: 40%"></div></div>
+                </div>
+                <div class="stat-item">
+                    <label>Water Usage</label>
+                    <div class="bar-bg"><div class="bar-fill blue" style="width: 70%"></div></div>
+                </div>
+            </div>
+
+            <div class="journey-preview">
+                <h4>Product Journey</h4>
+                <p>Distance: 5000 km</p>
+            </div>
+
+            <button id="btn-journey" class="action-btn">Journey</button>
+        </div>
+
+        <div id="screen-roadmap" class="screen hidden">
+            <div class="nav-back" id="btn-back">← Back</div>
+            
+            <div class="header-roadmap">
+                <h2>Maggie's Farm</h2>
+                <div class="farm-icons">
+                    <div class="circle orange"></div>
+                    <div class="circle green"></div>
+                </div>
+                <p class="location">Located in: Spain</p>
+                <p class="quote">Top 1: "From Soil to Table"</p>
+            </div>
+
+            <h3>Product Roadmap</h3>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <span class="date">1/12/2023 — Seed</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <span class="date">1/2/2025 — Irrigation</span>
+                        <p class="detail">Day: Sunny<br>Feeling: Hopeful</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <span class="date">20/2/2025 — Harvest</span>
+                        <p class="detail">Attachment: Video</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <span class="date">30/2/2025 — Transport</span>
+                        <p class="detail">Spain → Portugal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-login" class="screen hidden">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="circle orange"></div>
+                    <h2>Welcome back</h2>
+                    <p>Manage harvests & track everything</p>
+                </div>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="maggie@farm.com" value="maggie@farm.com">
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••" value="123456">
+                    </div>
+                    <div class="form-footer">
+                        <span>Remember me</span>
+                        <a href="#">Forgot?</a>
+                    </div>
+                    <button type="button" id="btn-login" class="action-btn green-btn">Sign in</button>
+                </form>
+            </div>
+                   
+            <p id="btn-to-consumer" style="margin-top: 20px; text-align: center; font-size: 13px; color: var(--text-light); cursor: pointer; text-decoration: underline; opacity: 0.7;">
+                Not a producer? Scan a product here.
+            </p>
+        </div>
+ 
+
+        <div id="screen-dashboard" class="screen hidden">
+            <div class="header-roadmap">
+                <h2>Welcome Back, Maggie!</h2>
+                <p>Overview of your farms & batches</p>
+            </div>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="label">Active Harvests</span>
+                    <span class="number">12</span>
+                </div>
+                <div class="stat-card">
+                    <span class="label">Harvest Today</span>
+                    <span class="number">3</span>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <span class="label">Recent product journey</span>
+                <svg viewBox="0 0 100 40" class="mini-chart">
+                    <path d="M0 30 Q 25 10, 50 25 T 100 20" fill="none" stroke="#42A5F5" stroke-width="2"/>
+                    <circle cx="100" cy="20" r="2" fill="#FFB74D" />
+                </svg>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent activity</h3>
+                <div class="activity-item">
+                    <p>Carrots - Harvest #35 logged a new photo</p>
+                    <span class="time">1h ago</span>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button id="btn-new-harvest" class="action-btn green-btn small">New Harvest</button>
+                <button class="action-btn blue-btn small">Log</button>
+            </div>
+        </div>
+
+        <div id="screen-new-harvest" class="screen hidden">
+            <div class="nav-back" id="btn-back-dash">← Cancel</div>
+            
+            <div class="header-roadmap">
+                <h2>New Harvest</h2>
+                <p>Create a new batch</p>
+            </div>
+
+            <div class="form-step">
+                <label>Produce</label>
+                <select class="std-input">
+                    <option>Carrots</option>
+                    <option>Tomatoes</option>
+                </select>
+            </div>
+
+            <div class="form-step">
+                <label>Planted area (m²)</label>
+                <input type="number" class="std-input" placeholder="e.g. 500">
+            </div>
+
+            <div class="form-step">
+                <label>Location</label>
+                <div class="fake-input-location">
+                    <span class="circle orange small"></span> Spain, Madrid
+                </div>
+            </div>
+
+            <button id="btn-create" class="action-btn green-btn" style="margin-top: 20px;">Create Harvest</button>
+        </div>
+
+        <div id="screen-success" class="screen hidden" style="justify-content: center; text-align: center;">
+            <div class="success-icon">🎉</div>
+            <h2>Nice work, Maggie!</h2>
+            <p>Your harvest was created successfully</p>
+            
+            <div class="ticket">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="text-align: left;">
+                        <p class="tiny">Harvest created</p>
+                        <h3 id="harvest-title">Harvest #36 - Carrots</h3> <p class="tiny" style="margin-top: 5px;">Batch ID: <span id="batch-id">X99</span></p>
+                    </div>
+                    <img id="qr-code-img" src="" alt="QR" style="width: 80px; height: 80px; border-radius: 8px; margin-left: 15px;">
+                </div>
+                <button class="tiny-btn" style="margin-top: 10px; width: 100%;">View Documentation</button>
+            </div>
+
+            <div class="share-actions">
+                <button class="action-btn blue-btn" id="btn-home">Back to Home</button>
+            </div>
+        </div>
+
+        <div id="sensor-toast" class="toast">
+        <div class="toast-icon">⚠️</div>
+        <div class="toast-content">
+            <h4>Soil Moisture Low</h4>
+            <p>Sector 4 is below 20%. Irrigation advised.</p>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

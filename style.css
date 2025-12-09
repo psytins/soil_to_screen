@@ -1,0 +1,233 @@
+:root {
+    /* Cores */
+    --bg-dark: #2F3E37; 
+    --card-bg: #FDFBF7;
+    --text-main: #1C2A35;
+    --text-light: #6E7C85;
+    --accent-green: #8BC34A;
+    --accent-orange: #FFB74D;
+    --accent-blue: #42A5F5;
+    --btn-dark: #1C2A35;
+    
+    /* Variáveis de Espaçamento - O Segredo */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.phone-frame {
+    width: 375px;
+    height: 812px; /* Altura iPhone X */
+    background-color: var(--card-bg);
+    border-radius: 40px;
+    padding: var(--spacing-lg); /* Mais padding na borda do ecrã */
+    box-sizing: border-box;
+    overflow-y: auto; /* Permite scroll se necessário */
+    overflow-x: hidden;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    
+    /* Esconde a scrollbar para ficar bonito */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+.phone-frame::-webkit-scrollbar { display: none; }
+
+/* Tipografia com respiração */
+h1 { font-size: 32px; color: var(--text-main); margin: var(--spacing-xs) 0 var(--spacing-sm) 0; line-height: 1.1; }
+h2 { font-size: 24px; margin-bottom: var(--spacing-sm); color: var(--text-main); }
+h3 { font-size: 18px; margin-bottom: var(--spacing-sm); color: var(--text-main); }
+p { color: var(--text-light); font-size: 14px; margin: 0 0 var(--spacing-xs) 0; line-height: 1.5; }
+
+/* Gestão de Ecrãs */
+.screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Animação suave */
+    transition: opacity 0.3s ease; 
+}
+.hidden { display: none; opacity: 0; }
+.active { display: flex; opacity: 1; }
+
+/* --- CONSUMER SIDE --- */
+
+.header { margin-bottom: var(--spacing-md); }
+.carrot-icon { font-size: 48px; position: absolute; top: 90px; right: 30px; }
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm); /* Espaço entre as barras */
+    margin-bottom: var(--spacing-lg);
+}
+
+.stat-item label { font-size: 13px; font-weight: 600; color: var(--text-main); display: block; margin-bottom: 6px; }
+.bar-bg { background: #E0E0E0; height: 10px; border-radius: 5px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 5px; }
+
+.green { background-color: var(--accent-green); }
+.orange { background-color: var(--accent-orange); }
+.blue { background-color: var(--accent-blue); }
+.grey { background-color: #B0BEC5; }
+
+.journey-preview {
+    background: #F0F4F8;
+    padding: var(--spacing-sm);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+.action-btn {
+    background-color: var(--btn-dark);
+    color: white;
+    padding: 18px; /* Botão mais gordo */
+    border-radius: 16px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: auto;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.1s;
+}
+.action-btn:active { transform: scale(0.98); }
+
+/* Timeline */
+.timeline { 
+    border-left: 2px solid #E0E0E0; 
+    margin-left: 10px; 
+    padding-left: 25px; 
+    padding-top: 10px;
+}
+.timeline-item { position: relative; margin-bottom: 40px; } /* Muito espaço entre items */
+.dot {
+    width: 14px; height: 14px; background: var(--text-main); border-radius: 50%; border: 3px solid var(--card-bg);
+    position: absolute; left: -34px; top: 0;
+}
+.date { font-weight: bold; color: var(--text-main); font-size: 15px; display: block; margin-bottom: 4px; }
+.detail { font-size: 13px; }
+
+.nav-back { cursor: pointer; margin-bottom: var(--spacing-sm); color: var(--text-light); font-weight: 600; }
+.farm-icons { display: flex; gap: 12px; margin-bottom: var(--spacing-sm); }
+.circle { width: 48px; height: 48px; border-radius: 50%; }
+
+/* --- PRODUCER SIDE (Login & Forms) --- */
+
+.login-container { 
+    justify-content: center; 
+    gap: var(--spacing-lg); /* Espaço entre Header e Form */
+}
+
+.login-header { text-align: left; margin-bottom: var(--spacing-md); }
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* Espaço entre inputs */
+}
+
+.input-group label { margin-bottom: 8px; font-weight: 500; }
+.input-group input, .std-input, select {
+    width: 100%; 
+    padding: 16px; /* Input mais alto e confortável */
+    border: 1px solid #E0E0E0;
+    border-radius: 12px; 
+    background: #F5F7F8; 
+    box-sizing: border-box;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s;
+}
+.input-group input:focus, .std-input:focus { border-color: var(--accent-green); background: white; }
+
+.form-footer { margin-top: -10px; margin-bottom: 10px; }
+
+/* Dashboard spacing */
+.header-roadmap { margin-bottom: var(--spacing-md); }
+
+.stats-row { 
+    display: flex; 
+    gap: 16px; /* Espaço entre os cartões de stat */
+    margin-bottom: var(--spacing-md); 
+}
+.stat-card {
+    flex: 1; background: white; padding: 20px; border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    display: flex; flex-direction: column; gap: 5px;
+}
+
+.chart-card {
+    background: white; padding: 20px; border-radius: 16px; margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.recent-activity { margin-bottom: var(--spacing-md); }
+.activity-item { 
+    background: white; padding: 16px; border-radius: 12px; 
+    border-left: 4px solid var(--accent-blue);
+}
+
+.quick-actions { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Mudei para 2 colunas para botões maiores */
+    gap: 16px; 
+    margin-top: auto; 
+}
+
+/* New Harvest Form Spacing */
+#screen-new-harvest { gap: var(--spacing-md); }
+.form-step { display: flex; flex-direction: column; gap: 8px; }
+.fake-input-location {
+    padding: 16px; background: white; border: 1px solid #E0E0E0; border-radius: 12px;
+    display: flex; align-items: center; gap: 10px; color: var(--text-main);
+}
+.small.circle { width: 20px; height: 20px; }
+
+/* Success Screen */
+#screen-success { gap: var(--spacing-sm); padding-top: 40px; }
+.ticket {
+    background: white; padding: 24px; border-radius: 20px; margin: var(--spacing-md) 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 6px solid var(--accent-green);
+    display: flex; flex-direction: column; gap: 8px;
+}
+
+/* Cores de Botões */
+.green-btn { background-color: var(--accent-green); }
+.blue-btn { background-color: var(--accent-blue); }
+
+/* Toast Notification */
+.toast {
+    position: absolute;
+    top: -100px; /* Hidden initially */
+    left: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    border-left: 5px solid #FF5252; /* Red alert */
+}
+
+.toast.show { top: 60px; } /* Slides down */
+
+.toast-icon { font-size: 24px; }
+.toast-content h4 { margin: 0; font-size: 14px; color: var(--text-main); }
+.toast-content p { margin: 0; font-size: 12px; color: var(--text-light); }
